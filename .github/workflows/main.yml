@@ -26,7 +26,9 @@ jobs:
     - name: Run a one-line script
       run: |
         import os
-        print(os.environ['arg'])
+        a=os.environ['arg']
+        
+        print(1+int(a))
       shell: python
       
       env:
