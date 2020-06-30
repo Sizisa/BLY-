@@ -1,2 +1,4 @@
+import os
 
-print(12345678910)
+arg=os.environ['arg']
+print(arg)
