@@ -1,4 +1,4 @@
 import os
 
-arg=os.environ['arg']
+arg=os.environ['ARG']
 print(arg)
