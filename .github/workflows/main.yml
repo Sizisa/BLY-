@@ -24,7 +24,11 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: Run a one-line script
-      run:  python a.py
+      run: |
+        import os
+        print(os.environ['arg'])
+      shell: python
+      
       env:
         arg: ${{ secrets.A }} 
         ARG: ${{ secrets.A }}
