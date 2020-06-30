@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*
 import os
 
 arg=os.environ[“ARG”]
