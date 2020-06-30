@@ -31,7 +31,7 @@ jobs:
       
       env:
         arg: ${{ secrets.A }} 
-        ARG: ${{ secrets.A }}
+
 
       
 
