@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*
 import os
-a=os.environ['arg']
+a=os.environ['passwd']
         
-print(1+int(a))
+print((type)a)

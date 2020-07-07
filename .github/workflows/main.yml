@@ -27,7 +27,7 @@ jobs:
       run: python a.py
       
       env:
-        arg: ${{ secrets.A }} 
+        passwd: ${{ secrets.PASSWD }} 
 
 
       
