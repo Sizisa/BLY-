@@ -2,4 +2,4 @@
 import os
 a=os.environ['passwd']
         
-print((type)a)
+print(a+"")
