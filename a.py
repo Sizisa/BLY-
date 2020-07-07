@@ -34,7 +34,7 @@ def login():
         if checkinResultDic['ret'] == 0:#今日非首次签到
             message += '今天已经签到过了！\n'
             userInfo = requests.get(url=userUrl, headers=header).text
-            if userInfo.find('剩余流量') != -1:  # 获取剩余流量成功
+            if userInfo.find('id="remain">') != -1:  # 获取剩余流量成功
                 remain = userInfo.split('id="remain">')[1].split('</code>')[0]
                 message+='剩余流量：' + remain
                 print(message)
