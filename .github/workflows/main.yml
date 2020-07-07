@@ -28,6 +28,8 @@ jobs:
       
       env:
         passwd: ${{ secrets.PASSWD }} 
+        email: ${{ secrets.USERNAME }}
+        sckey: ${{ secrets.SCKEY }}
 
 
       
