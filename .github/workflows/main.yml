@@ -6,9 +6,9 @@ name: mytest
 # events but only for the master branch
 on:
   schedule:
-    - cron: '31 21 * * *'
+    - cron: '55 21 * * *'
   push:
-    branches: [ master ]
+    #branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
