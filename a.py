@@ -33,21 +33,22 @@ def login():
 
         if checkinResultDic['ret'] == 1:#今日首次签到
             print(checkinResultDic)
-            message += checkinResultDic['msg'] + '\n' + '剩余流量：' + checkinResultDic['unUsedTraffic']
+            message += checkinResultDic['msg'] + '\n'
+            
+        elif checkinResultDic['ret'] == 0:#今日非首次签到
+            message += '今天已经签到过了！\n'
+            
+                
+        userInfo = requests.get(url=userUrl, headers=header).text
+        if userInfo.find('id="remain">') != -1:  # 获取剩余流量成功
+            remain = userInfo.split('id="remain">')[1].split('</code>')[0]
+            message+='剩余流量：' + remain
             print(message)
             send(sckey, message)
-        if checkinResultDic['ret'] == 0:#今日非首次签到
-            message += '今天已经签到过了！\n'
-            userInfo = requests.get(url=userUrl, headers=header).text
-            if userInfo.find('id="remain">') != -1:  # 获取剩余流量成功
-                remain = userInfo.split('id="remain">')[1].split('</code>')[0]
-                message+='剩余流量：' + remain
-                print(message)
-                send(sckey, message)
-            else:
-                message+='未获取到剩余流量！'
-                print(message)
-                send(sckey,message)
+        else:
+            message+='未获取到剩余流量！'
+            print(message)
+            send(sckey,message)
 
 if __name__=='__main__':
     username = os.environ['email']
