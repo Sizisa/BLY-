@@ -6,7 +6,7 @@ name: mytest
 # events but only for the master branch
 on:
   schedule:
-    - cron: '31 21 * * *'
+    - cron: '45 21 * * *'
   push:
     branches: [ master ]
 
