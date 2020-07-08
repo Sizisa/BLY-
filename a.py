@@ -32,6 +32,7 @@ def login():
         checkinResultDic = json.loads(checkinResult)
 
         if checkinResultDic['ret'] == 1:#今日首次签到
+            print(checkinResultDic)
             message += checkinResultDic['msg'] + '\n' + '剩余流量：' + checkinResultDic['unUsedTraffic']
             print(message)
             send(sckey, message)
