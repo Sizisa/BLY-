@@ -8,9 +8,9 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
-def send(sckey,msg):
+def send(sckey,title,msg):
     serverUrl = 'http://sc.ftqq.com/'+sckey+'.send'
-    data={'text':'冰灵云签到','desp':msg}
+    data={'text':title,'desp':msg}
     r=requests.post(url=serverUrl,data=data)
     print(r.text)
 def login():
@@ -44,11 +44,11 @@ def login():
             remain = userInfo.split('id="remain">')[1].split('</code>')[0]
             message+='剩余流量：' + remain
             print(message)
-            send(sckey, message)
+            send(sckey,'冰灵云签到成功', message)
         else:
             message+='未获取到剩余流量！'
             print(message)
-            send(sckey,message)
+            send(sckey,'冰灵云签到未获取到剩余流量',message)
 
 if __name__=='__main__':
     username = os.environ['email']
