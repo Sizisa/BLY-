@@ -26,8 +26,8 @@ jobs:
     - name: install requests
       run: sudo pip install requests
       
-    - name: Run a one-line script
-      run: python a.py
+    - name: Run script
+      run: python checkin.py
       
       env:
         passwd: ${{ secrets.PASSWD }} 
